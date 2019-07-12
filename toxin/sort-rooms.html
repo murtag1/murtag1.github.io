@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="mask-icon" href="assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <title>sort rooms</title>
+  <link href="/app.css" rel="stylesheet"></head>
+  <body>
+    <div class="page-content">
+      <div class="header">
+        <div class="header__inner">
+          <div class="header__search-rooms">
+            <form class="search-rooms">
+              <div class="search-rooms__title">
+                <h1 class="title title_h1">Найдём номера под ваши пожелания</h1>
+              </div>
+              <div class="search-rooms__datepicker-wrap">
+                <div class="datepicker-dropdowns">
+                  <div class="datepicker-dropdowns__first-dropdown">
+                    <div class="date-dropdown">
+                      <div class="date-dropdown__title">
+                        <h3 class="title title_h3">прибытие</h3>
+                      </div>
+                      <input class="date-dropdown__input" placeholder="ДД.ММ.ГГГГ">
+                      <div class="date-dropdown__icon-wrap"><i class="date-dropdown__icon icon-chevron-down"></i></div>
+                    </div>
+                  </div>
+                  <div class="datepicker-dropdowns__second-dropdown">
+                    <div class="date-dropdown">
+                      <div class="date-dropdown__title">
+                        <h3 class="title title_h3">выезд</h3>
+                      </div>
+                      <input class="date-dropdown__input" placeholder="ДД.ММ.ГГГГ">
+                      <div class="date-dropdown__icon-wrap"><i class="date-dropdown__icon icon-chevron-down"></i></div>
+                    </div>
+                  </div>
+                  <div class="datepicker-dropdowns__datepicker">
+                    <div class="datepicker"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="search-rooms__dropdown">
+                <div class="dropdown" data-dropdown-type="guests">
+                  <div class="dropdown__title">
+                    <h3 class="title title_h3">гости</h3>
+                  </div>
+                  <button class="dropdown__button" type="button">
+                    <div class="dropdown__button-text">гости</div>
+                    <div class="dropdown__icon-wrap"><i class="dropdown__icon icon-chevron-down"></i></div>
+                  </button>
+                  <div class="dropdown__list">
+                    <div class="dropdown__item" data-num="0">
+                      <div class="dropdown__name-item">взрослые</div>
+                      <div class="dropdown__change-num">
+                        <div class="dropdown__minus-btn">-</div>
+                        <div class="dropdown__item-num">0</div>
+                        <div class="dropdown__plus-btn">+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown__item" data-num="0">
+                      <div class="dropdown__name-item">дети</div>
+                      <div class="dropdown__change-num">
+                        <div class="dropdown__minus-btn">-</div>
+                        <div class="dropdown__item-num">0</div>
+                        <div class="dropdown__plus-btn">+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown__item" data-num="0">
+                      <div class="dropdown__name-item">младенцы</div>
+                      <div class="dropdown__change-num">
+                        <div class="dropdown__minus-btn">-</div>
+                        <div class="dropdown__item-num">0</div>
+                        <div class="dropdown__plus-btn">+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown__buttons-wrap">
+                      <div class="dropdown__clean-btn">
+                        <button class="button" type="button">
+                          <div class="button__content">очистить</div>
+                        </button>
+                      </div>
+                      <div class="dropdown__apply-btn">
+                        <button class="button button_purple-color " type="button">
+                          <div class="button__content">применить</div>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="search-rooms__button"><a class="button button_purple-color button_border button_big button_background button_full-width " href="/sort-rooms.html">
+                  <div class="button__content button__content_padding ">подобрать номер</div><i class="button__icon icon-arrow-right"></i></a>
+              </div>
+            </form>
+          </div>
+          <div class="header__registration">
+            <form class="registration">
+              <div class="registration__title">
+                <h1 class="title title_h1">Регистрация аккаунта</h1>
+              </div>
+              <div class="registration__name">
+                <div class="text-field">
+                  <input class="text-field__input" type="text" placeholder="Имя">
+                </div>
+              </div>
+              <div class="registration__surname">
+                <div class="text-field">
+                  <input class="text-field__input" type="text" placeholder="Фамилия">
+                </div>
+              </div>
+              <div class="registration__sex">
+                <div class="radio-buttons">
+                  <label class="radio-buttons__item">
+                    <input class="radio-buttons__input" type="radio" name="sex">
+                    <div class="radio-buttons__icon"></div>
+                    <div class="radio-buttons__text">Мужчина</div>
+                  </label>
+                  <label class="radio-buttons__item">
+                    <input class="radio-buttons__input" type="radio" name="sex">
+                    <div class="radio-buttons__icon"></div>
+                    <div class="radio-buttons__text">Женщина</div>
+                  </label>
+                </div>
+              </div>
+              <div class="registration__birthday">
+                <div class="text-field">
+                  <div class="text-field__title-wrap">
+                    <h3 class="title title_h3">Дата рождения</h3>
+                  </div>
+                  <input class="text-field__input" type="text" placeholder="ДД.ММ.ГГГГ">
+                </div>
+              </div>
+              <div class="registration__sign-in-info">
+                <div class="registration__email">
+                  <div class="text-field">
+                    <div class="text-field__title-wrap">
+                      <h3 class="title title_h3">данные для входа в сервис</h3>
+                    </div>
+                    <input class="text-field__input" type="email" placeholder="Email">
+                  </div>
+                </div>
+                <div class="text-field">
+                  <input class="text-field__input" type="password" placeholder="Пароль">
+                </div>
+              </div>
+              <div class="registration__toggle">
+                <div class="toggle">
+                  <input class="toggle__input" type="checkbox" id="registration-toggle">
+                  <label class="toggle__inner" for="registration-toggle">
+                    <div class="toggle__blob"></div>
+                  </label>
+                  <label class="toggle__content" for="registration-toggle">Получать спецпредложения</label>
+                </div>
+              </div>
+              <div class="registration__payment-btn">
+                <button class="button button_purple-color button_border button_background button_full-width " type="button">
+                  <div class="button__content">зарегистрироваться</div><i class="button__icon icon-arrow-right"></i>
+                </button>
+              </div>
+              <div class="registration__sign-in">Уже есть аккаунт на Toxin
+                <div class="registration__sign-in-btn">
+                  <button class="button button_purple-color button_border button_small-width " type="button">
+                    <div class="button__content">войти</div>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="header__sign-in">
+            <form class="sign-in">
+              <div class="sign-in__title">
+                <h1 class="title title_h1">Войти</h1>
+              </div>
+              <div class="sign-in__info">
+                <div class="registration__email">
+                  <div class="text-field">
+                    <input class="text-field__input" type="email" placeholder="Email">
+                  </div>
+                </div>
+                <div class="text-field">
+                  <input class="text-field__input" type="password" placeholder="Пароль">
+                </div>
+              </div>
+              <div class="sign-in__sign-in-btn">
+                <button class="button button_purple-color button_border button_background button_full-width " type="button">
+                  <div class="button__content">войти</div><i class="button__icon icon-arrow-right"></i>
+                </button>
+              </div>
+              <div class="sign-in__create-btn-wrap">Нет аккаунта на Toxin?
+                <div class="sign-in__registration-btn">
+                  <button class="button button_purple-color button_border button_small-width " type="button">
+                    <div class="button__content">создать</div>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="header__inner-left">
+            <button class="hamburger hamburger--squeeze header__hamburger"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+            <div class="header__logo">
+              <div class="logo"><a href="/index.html"><img class="logo__img" src="/assets/img/logo.svg" alt="logo"></a></div>
+            </div>
+          </div>
+          <div class="header__inner-right">
+            <ul class="header__nav">
+              <li class="header__nav-item"><a class="header__nav-link" href="link-mock.html">О нас </a></li>
+              <li class="header__nav-item">
+                <div class="header__nav-link">Услуги<i class="header__item-icon icon-chevron-down"></i></div>
+                <ul class="header__sublist">
+                  <li class="header__nav-item header__sublist-item header__search-room-btn">
+                    <div class="header__nav-link">Поиск комнаты</div>
+                  </li>
+                  <li class="header__nav-item header__sublist-item"><a class="header__nav-link" href="link-mock.html">услуга 2</a></li>
+                  <li class="header__nav-item header__sublist-item"><a class="header__nav-link" href="link-mock.html">услуга 3</a></li>
+                </ul>
+              </li>
+              <li class="header__nav-item"><a class="header__nav-link" href="link-mock.html">Вакансии</a></li>
+              <li class="header__nav-item"><a class="header__nav-link" href="link-mock.html">Новости</a></li>
+              <li class="header__nav-item">
+                <div class="header__nav-link">Соглашения<i class="header__item-icon icon-chevron-down"></i></div>
+                <ul class="header__sublist">
+                  <li class="header__nav-item header__sublist-item"><a class="header__nav-link" href="link-mock.html">соглашение 1</a></li>
+                  <li class="header__nav-item header__sublist-item"><a class="header__nav-link" href="link-mock.html">соглашение 2</a></li>
+                  <li class="header__nav-item header__sublist-item"><a class="header__nav-link" href="link-mock.html">соглашение 3</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="header__buttons">
+              <div class="header__sigh-in-btn">
+                <button class="button button_purple-color button_border button_small-height " type="button">
+                  <div class="button__content button__content_padding ">войти</div>
+                </button>
+              </div>
+              <div class="header__registration-btn">
+                <button class="button button_background button_small-height " type="button">
+                  <div class="button__content button__content_padding ">зарегистрироваться</div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="sort-rooms">
+        <div class="sort-rooms__inner">
+          <div class="sort-rooms__left">
+            <div class="filter">
+              <div class="filter__datepicker-wrap">
+                <div class="datepicker-dropdowns">
+                  <div class="datepicker-dropdowns__first-dropdown datepicker-dropdowns__first-dropdown_full-width">
+                    <div class="text-field">
+                      <div class="text-field__title-wrap">
+                        <h3 class="title title_h3">даты пребывания в отеле</h3>
+                      </div>
+                      <input class="text-field__input" type="text" placeholder="ДД ММ - ДД MM"><i class="text-field__icon icon-chevron-down text-field__icon_down"></i>
+                    </div>
+                  </div>
+                  <div class="datepicker-dropdowns__datepicker">
+                    <div class="datepicker"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="filter__dropdown-guests">
+                <div class="dropdown" data-dropdown-type="guests">
+                  <div class="dropdown__title">
+                    <h3 class="title title_h3">гости</h3>
+                  </div>
+                  <button class="dropdown__button" type="button">
+                    <div class="dropdown__button-text">гости</div>
+                    <div class="dropdown__icon-wrap"><i class="dropdown__icon icon-chevron-down"></i></div>
+                  </button>
+                  <div class="dropdown__list">
+                    <div class="dropdown__item" data-num="0">
+                      <div class="dropdown__name-item">взрослые</div>
+                      <div class="dropdown__change-num">
+                        <div class="dropdown__minus-btn">-</div>
+                        <div class="dropdown__item-num">0</div>
+                        <div class="dropdown__plus-btn">+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown__item" data-num="0">
+                      <div class="dropdown__name-item">дети</div>
+                      <div class="dropdown__change-num">
+                        <div class="dropdown__minus-btn">-</div>
+                        <div class="dropdown__item-num">0</div>
+                        <div class="dropdown__plus-btn">+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown__item" data-num="0">
+                      <div class="dropdown__name-item">младенцы</div>
+                      <div class="dropdown__change-num">
+                        <div class="dropdown__minus-btn">-</div>
+                        <div class="dropdown__item-num">0</div>
+                        <div class="dropdown__plus-btn">+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown__buttons-wrap">
+                      <div class="dropdown__clean-btn">
+                        <button class="button" type="button">
+                          <div class="button__content">очистить</div>
+                        </button>
+                      </div>
+                      <div class="dropdown__apply-btn">
+                        <button class="button button_purple-color " type="button">
+                          <div class="button__content">применить</div>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="filter__slider">
+                <div class="slider">
+                  <div class="slider__title">
+                    <div class="slider__title-text">
+                      <h3 class="title title_h3">диапазон цены</h3>
+                    </div>
+                    <div class="slider__range"></div>
+                  </div>
+                  <div class="slider__body">
+                    <div class="slider__handle ui-slider-handle ui-corner-all ui-state-default" tabindex="0">
+                      <div class="slider__handle-dot"></div>
+                    </div>
+                    <div class="slider__handle ui-slider-handle ui-corner-all ui-state-default" tabindex="0">
+                      <div class="slider__handle-dot"></div>
+                    </div>
+                  </div>
+                  <div class="slider__footnote">Стоимость за сутки пребывания в номере</div>
+                </div>
+              </div>
+              <div class="filter__checkbox-buttons">
+                <div class="checkbox-buttons">
+                  <div class="checkbox-buttons__title">
+                    <h3 class="title title_h3">checkbox buttons</h3>
+                  </div>
+                  <label class="checkbox-buttons__item">
+                    <input class="checkbox-buttons__input" type="checkbox">
+                    <div class="checkbox-buttons__icon"></div>
+                    <div class="checkbox-buttons__item-text">Можно курить</div>
+                  </label>
+                  <label class="checkbox-buttons__item">
+                    <input class="checkbox-buttons__input" type="checkbox">
+                    <div class="checkbox-buttons__icon"></div>
+                    <div class="checkbox-buttons__item-text">Можно с питомцами</div>
+                  </label>
+                  <label class="checkbox-buttons__item">
+                    <input class="checkbox-buttons__input" type="checkbox">
+                    <div class="checkbox-buttons__icon"></div>
+                    <div class="checkbox-buttons__item-text">Можно пригласить гостей (до 10 человек)</div>
+                  </label>
+                </div>
+              </div>
+              <div class="filter__rich-checkbox-buttons">
+                <div class="checkbox-buttons">
+                  <div class="checkbox-buttons__title">
+                    <h3 class="title title_h3">Доступность</h3>
+                  </div>
+                  <label class="checkbox-buttons__item">
+                    <input class="checkbox-buttons__input" type="checkbox">
+                    <div class="checkbox-buttons__icon"></div>
+                    <div class="checkbox-buttons__item-content">
+                      <div class="checkbox-buttons__item-title">Широкий коридор</div>
+                      <div class="checkbox-buttons__item-text checkbox-buttons__item-text_small">Ширина коридоров в номере не менее 91 см.</div>
+                    </div>
+                  </label>
+                  <label class="checkbox-buttons__item">
+                    <input class="checkbox-buttons__input" type="checkbox">
+                    <div class="checkbox-buttons__icon"></div>
+                    <div class="checkbox-buttons__item-content">
+                      <div class="checkbox-buttons__item-title">Помощник для инвалидов</div>
+                      <div class="checkbox-buttons__item-text checkbox-buttons__item-text_small">На 1 этаже вас встретит специалист и проводит до номера.</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="filter__dropdown-comfort">
+                <div class="dropdown" data-dropdown-type="picking">
+                  <div class="dropdown__title">
+                    <h3 class="title title_h3">Удобства</h3>
+                  </div>
+                  <button class="dropdown__button" type="button">
+                    <div class="dropdown__button-text">Удобства</div>
+                    <div class="dropdown__icon-wrap"><i class="dropdown__icon icon-chevron-down"></i></div>
+                  </button>
+                  <div class="dropdown__list">
+                    <div class="dropdown__item" data-num="0">
+                      <div class="dropdown__name-item">спальни</div>
+                      <div class="dropdown__change-num">
+                        <div class="dropdown__minus-btn">-</div>
+                        <div class="dropdown__item-num">0</div>
+                        <div class="dropdown__plus-btn">+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown__item" data-num="0">
+                      <div class="dropdown__name-item">кровати</div>
+                      <div class="dropdown__change-num">
+                        <div class="dropdown__minus-btn">-</div>
+                        <div class="dropdown__item-num">0</div>
+                        <div class="dropdown__plus-btn">+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown__item" data-num="0">
+                      <div class="dropdown__name-item">ванные комнаты</div>
+                      <div class="dropdown__change-num">
+                        <div class="dropdown__minus-btn">-</div>
+                        <div class="dropdown__item-num">0</div>
+                        <div class="dropdown__plus-btn">+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown__buttons-wrap">
+                      <div class="dropdown__clean-btn">
+                        <button class="button" type="button">
+                          <div class="button__content">очистить</div>
+                        </button>
+                      </div>
+                      <div class="dropdown__apply-btn">
+                        <button class="button button_purple-color " type="button">
+                          <div class="button__content">применить</div>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="exp-checkbox-list">
+                <div class="exp-checkbox-list__button">
+                  <h3 class="title title_h3">дополнительные удобства</h3>
+                  <div class="exp-checkbox-list__icon-wrap"><i class="exp-checkbox-list__icon icon-chevron-down"></i></div>
+                </div>
+                <div class="exp-checkbox-list__list">
+                  <div class="checkbox-buttons">
+                    <label class="checkbox-buttons__item">
+                      <input class="checkbox-buttons__input" type="checkbox">
+                      <div class="checkbox-buttons__icon"></div>
+                      <div class="checkbox-buttons__item-text">Завтрак</div>
+                    </label>
+                    <label class="checkbox-buttons__item">
+                      <input class="checkbox-buttons__input" type="checkbox">
+                      <div class="checkbox-buttons__icon"></div>
+                      <div class="checkbox-buttons__item-text">Письменный стол</div>
+                    </label>
+                    <label class="checkbox-buttons__item">
+                      <input class="checkbox-buttons__input" type="checkbox">
+                      <div class="checkbox-buttons__icon"></div>
+                      <div class="checkbox-buttons__item-text">Стул для кормления</div>
+                    </label>
+                    <label class="checkbox-buttons__item">
+                      <input class="checkbox-buttons__input" type="checkbox">
+                      <div class="checkbox-buttons__icon"></div>
+                      <div class="checkbox-buttons__item-text">Кроватка</div>
+                    </label>
+                    <label class="checkbox-buttons__item">
+                      <input class="checkbox-buttons__input" type="checkbox">
+                      <div class="checkbox-buttons__icon"></div>
+                      <div class="checkbox-buttons__item-text">Телевизор</div>
+                    </label>
+                    <label class="checkbox-buttons__item">
+                      <input class="checkbox-buttons__input" type="checkbox">
+                      <div class="checkbox-buttons__icon"></div>
+                      <div class="checkbox-buttons__item-text">Шампунь</div>
+                    </label>
+                    <label class="checkbox-buttons__item">
+                      <input class="checkbox-buttons__input" type="checkbox">
+                      <div class="checkbox-buttons__icon"></div>
+                      <div class="checkbox-buttons__item-text">Телевизор</div>
+                    </label>
+                    <label class="checkbox-buttons__item">
+                      <input class="checkbox-buttons__input" type="checkbox">
+                      <div class="checkbox-buttons__icon"></div>
+                      <div class="checkbox-buttons__item-text">Шампунь</div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sort-rooms__right">
+            <div class="sort-rooms__rooms-title">
+              <h1 class="title title_h1">Номера, которые мы для вас подобрали</h1>
+            </div>
+            <div class="sort-rooms__rooms-wrap">
+              <div class="sort-rooms__room-item">
+                <div class="room-main-info">
+                  <div class="room-main-info__carousel owl-carousel"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img">
+                  </div>
+                  <div class="room-main-info__content">
+                    <div class="room-main-info__content-top">
+                      <div class="room-main-info__room">№ <span class="room-main-info__room-num">888</span><span class="room-main-info__lux"> люкс</span>
+                      </div>
+                      <div class="room-main-info__price"><span class="room-main-info__price-num">9 990₽ </span>в сутки</div>
+                    </div>
+                    <div class="room-main-info__content-bottom">
+                      <div class="rate-button"><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star-border"></i><i class="rate-button__icon icon-star-border"></i>
+                      </div>
+                      <div class="room-main-info__comments"><span class="room-main-info__comments-num">145</span> Отзывов</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sort-rooms__room-item">
+                <div class="room-main-info">
+                  <div class="room-main-info__carousel owl-carousel"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img">
+                  </div>
+                  <div class="room-main-info__content">
+                    <div class="room-main-info__content-top">
+                      <div class="room-main-info__room">№ <span class="room-main-info__room-num">840</span>
+                      </div>
+                      <div class="room-main-info__price"><span class="room-main-info__price-num">9 990₽ </span>в сутки</div>
+                    </div>
+                    <div class="room-main-info__content-bottom">
+                      <div class="rate-button"><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star-border"></i><i class="rate-button__icon icon-star-border"></i>
+                      </div>
+                      <div class="room-main-info__comments"><span class="room-main-info__comments-num">65</span> Отзывов</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sort-rooms__room-item">
+                <div class="room-main-info">
+                  <div class="room-main-info__carousel owl-carousel"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img">
+                  </div>
+                  <div class="room-main-info__content">
+                    <div class="room-main-info__content-top">
+                      <div class="room-main-info__room">№ <span class="room-main-info__room-num">980</span><span class="room-main-info__lux"> люкс</span>
+                      </div>
+                      <div class="room-main-info__price"><span class="room-main-info__price-num">8 500₽ </span>в сутки</div>
+                    </div>
+                    <div class="room-main-info__content-bottom">
+                      <div class="rate-button"><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star-border"></i><i class="rate-button__icon icon-star-border"></i>
+                      </div>
+                      <div class="room-main-info__comments"><span class="room-main-info__comments-num">35</span> Отзывов</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sort-rooms__room-item">
+                <div class="room-main-info">
+                  <div class="room-main-info__carousel owl-carousel"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img">
+                  </div>
+                  <div class="room-main-info__content">
+                    <div class="room-main-info__content-top">
+                      <div class="room-main-info__room">№ <span class="room-main-info__room-num">856</span>
+                      </div>
+                      <div class="room-main-info__price"><span class="room-main-info__price-num">7 300₽ </span>в сутки</div>
+                    </div>
+                    <div class="room-main-info__content-bottom">
+                      <div class="rate-button"><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star-border"></i><i class="rate-button__icon icon-star-border"></i>
+                      </div>
+                      <div class="room-main-info__comments"><span class="room-main-info__comments-num">19</span> Отзывов</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sort-rooms__room-item">
+                <div class="room-main-info">
+                  <div class="room-main-info__carousel owl-carousel"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img">
+                  </div>
+                  <div class="room-main-info__content">
+                    <div class="room-main-info__content-top">
+                      <div class="room-main-info__room">№ <span class="room-main-info__room-num">740</span>
+                      </div>
+                      <div class="room-main-info__price"><span class="room-main-info__price-num">6 000₽ </span>в сутки</div>
+                    </div>
+                    <div class="room-main-info__content-bottom">
+                      <div class="rate-button"><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star-border"></i><i class="rate-button__icon icon-star-border"></i>
+                      </div>
+                      <div class="room-main-info__comments"><span class="room-main-info__comments-num">44</span> Отзывов</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sort-rooms__room-item">
+                <div class="room-main-info">
+                  <div class="room-main-info__carousel owl-carousel"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img">
+                  </div>
+                  <div class="room-main-info__content">
+                    <div class="room-main-info__content-top">
+                      <div class="room-main-info__room">№ <span class="room-main-info__room-num">982</span>
+                      </div>
+                      <div class="room-main-info__price"><span class="room-main-info__price-num">5 800₽ </span>в сутки</div>
+                    </div>
+                    <div class="room-main-info__content-bottom">
+                      <div class="rate-button"><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star-border"></i><i class="rate-button__icon icon-star-border"></i>
+                      </div>
+                      <div class="room-main-info__comments"><span class="room-main-info__comments-num">56</span> Отзывов</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sort-rooms__room-item">
+                <div class="room-main-info">
+                  <div class="room-main-info__carousel owl-carousel"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img">
+                  </div>
+                  <div class="room-main-info__content">
+                    <div class="room-main-info__content-top">
+                      <div class="room-main-info__room">№ <span class="room-main-info__room-num">980</span><span class="room-main-info__lux"> люкс</span>
+                      </div>
+                      <div class="room-main-info__price"><span class="room-main-info__price-num">8 500₽ </span>в сутки</div>
+                    </div>
+                    <div class="room-main-info__content-bottom">
+                      <div class="rate-button"><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star-border"></i><i class="rate-button__icon icon-star-border"></i>
+                      </div>
+                      <div class="room-main-info__comments"><span class="room-main-info__comments-num">35</span> Отзывов</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sort-rooms__room-item">
+                <div class="room-main-info">
+                  <div class="room-main-info__carousel owl-carousel"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img">
+                  </div>
+                  <div class="room-main-info__content">
+                    <div class="room-main-info__content-top">
+                      <div class="room-main-info__room">№ <span class="room-main-info__room-num">980</span><span class="room-main-info__lux"> люкс</span>
+                      </div>
+                      <div class="room-main-info__price"><span class="room-main-info__price-num">8 500₽ </span>в сутки</div>
+                    </div>
+                    <div class="room-main-info__content-bottom">
+                      <div class="rate-button"><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star-border"></i><i class="rate-button__icon icon-star-border"></i>
+                      </div>
+                      <div class="room-main-info__comments"><span class="room-main-info__comments-num">35</span> Отзывов</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sort-rooms__room-item">
+                <div class="room-main-info">
+                  <div class="room-main-info__carousel owl-carousel"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img">
+                  </div>
+                  <div class="room-main-info__content">
+                    <div class="room-main-info__content-top">
+                      <div class="room-main-info__room">№ <span class="room-main-info__room-num">980</span><span class="room-main-info__lux"> люкс</span>
+                      </div>
+                      <div class="room-main-info__price"><span class="room-main-info__price-num">8 500₽ </span>в сутки</div>
+                    </div>
+                    <div class="room-main-info__content-bottom">
+                      <div class="rate-button"><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star-border"></i><i class="rate-button__icon icon-star-border"></i>
+                      </div>
+                      <div class="room-main-info__comments"><span class="room-main-info__comments-num">35</span> Отзывов</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sort-rooms__room-item">
+                <div class="room-main-info">
+                  <div class="room-main-info__carousel owl-carousel"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img">
+                  </div>
+                  <div class="room-main-info__content">
+                    <div class="room-main-info__content-top">
+                      <div class="room-main-info__room">№ <span class="room-main-info__room-num">980</span><span class="room-main-info__lux"> люкс</span>
+                      </div>
+                      <div class="room-main-info__price"><span class="room-main-info__price-num">8 500₽ </span>в сутки</div>
+                    </div>
+                    <div class="room-main-info__content-bottom">
+                      <div class="rate-button"><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star-border"></i><i class="rate-button__icon icon-star-border"></i>
+                      </div>
+                      <div class="room-main-info__comments"><span class="room-main-info__comments-num">35</span> Отзывов</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sort-rooms__room-item">
+                <div class="room-main-info">
+                  <div class="room-main-info__carousel owl-carousel"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img">
+                  </div>
+                  <div class="room-main-info__content">
+                    <div class="room-main-info__content-top">
+                      <div class="room-main-info__room">№ <span class="room-main-info__room-num">980</span><span class="room-main-info__lux"> люкс</span>
+                      </div>
+                      <div class="room-main-info__price"><span class="room-main-info__price-num">8 500₽ </span>в сутки</div>
+                    </div>
+                    <div class="room-main-info__content-bottom">
+                      <div class="rate-button"><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star-border"></i><i class="rate-button__icon icon-star-border"></i>
+                      </div>
+                      <div class="room-main-info__comments"><span class="room-main-info__comments-num">35</span> Отзывов</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sort-rooms__room-item">
+                <div class="room-main-info">
+                  <div class="room-main-info__carousel owl-carousel"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img1.jpg" alt="room-img"><img class="room-main-info__carousel-item" src="/assets/img/room-img2.jpg" alt="room-img">
+                  </div>
+                  <div class="room-main-info__content">
+                    <div class="room-main-info__content-top">
+                      <div class="room-main-info__room">№ <span class="room-main-info__room-num">980</span><span class="room-main-info__lux"> люкс</span>
+                      </div>
+                      <div class="room-main-info__price"><span class="room-main-info__price-num">8 500₽ </span>в сутки</div>
+                    </div>
+                    <div class="room-main-info__content-bottom">
+                      <div class="rate-button"><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star"></i><i class="rate-button__icon icon-star-border"></i><i class="rate-button__icon icon-star-border"></i>
+                      </div>
+                      <div class="room-main-info__comments"><span class="room-main-info__comments-num">35</span> Отзывов</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sort-rooms__pagination-wrap">
+              <div class="sort-rooms__pagination-inner">
+                <div class="pagination">
+                  <div class="pagination__item pagination__item_active">1</div>
+                  <div class="pagination__item">2</div>
+                  <div class="pagination__item">3</div>
+                  <div class="pagination__item">...</div>
+                  <div class="pagination__item">15</div><i class="pagination__icon icon-arrow-right"></i>
+                  <div class="pagination__description">1 – 12 из 100+ вариантов аренды</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="footer">
+      <div class="footer__row footer__first-row">
+        <div class="footer__col footer__logo-col">
+          <div class="footer__logo">
+            <div class="logo"><a href="/index.html"><img class="logo__img" src="/assets/img/logo.svg" alt="logo"></a></div>
+          </div>
+          <div class="footer__description">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</div>
+        </div>
+        <div class="footer__col footer__nav-col">
+          <div class="footer__col-header">Навигация<i class="icon-chevron-down footer__down-icon"></i></div>
+          <ul class="footer__list">
+            <li class="footer__list-item"><a class="footer__list-item-link" href="link-mock.html">О нас</a></li>
+            <li class="footer__list-item"><a class="footer__list-item-link" href="link-mock.html">Новости</a></li>
+            <li class="footer__list-item"><a class="footer__list-item-link" href="link-mock.html">Служба поддержки</a></li>
+            <li class="footer__list-item"><a class="footer__list-item-link" href="link-mock.html">Услуги</a></li>
+          </ul>
+        </div>
+        <div class="footer__col footer__about-us-col">
+          <div class="footer__col-header">О нас<i class="icon-chevron-down footer__down-icon"></i></div>
+          <ul class="footer__list">
+            <li class="footer__list-item"><a class="footer__list-item-link" href="link-mock.html">О сервисе</a></li>
+            <li class="footer__list-item"><a class="footer__list-item-link" href="link-mock.html">Наша команда</a></li>
+            <li class="footer__list-item"><a class="footer__list-item-link" href="link-mock.html">Вакансии</a></li>
+            <li class="footer__list-item"><a class="footer__list-item-link" href="link-mock.html">Инвесторы</a></li>
+          </ul>
+        </div>
+        <div class="footer__col footer__support-col">
+          <div class="footer__col-header">Служба поддержки<i class="icon-chevron-down footer__down-icon"></i></div>
+          <ul class="footer__list">
+            <li class="footer__list-item"><a class="footer__list-item-link" href="link-mock.html">Соглашения</a></li>
+            <li class="footer__list-item"><a class="footer__list-item-link" href="link-mock.html">Сообщества</a></li>
+            <li class="footer__list-item"><a class="footer__list-item-link" href="link-mock.html">Связь с нами</a></li>
+          </ul>
+        </div>
+        <div class="footer__col footer__subscription-col">
+          <div class="footer__col-header">Подписка<i class="icon-chevron-down footer__down-icon"></i></div>
+          <div class="footer__list">
+            <div class="footer__subscription">Получайте специальные предложения и новости сервиса</div>
+            <div class="footer__subscription-input">
+              <div class="text-field text-field_short ">
+                <input class="text-field__input" type="email" placeholder="Email"><i class="text-field__icon icon-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__row footer__second-row">
+        <div class="footer__copyright">Copyright © 2018 Toxin отель. Все права защищены.</div>
+        <div class="footer__icons"><a href="link-mock.html"><i class="footer__icon icon-twitter footer__twitter-icon"></i></a><a href="link-mock.html"><i class="footer__icon icon-facebook"></i></a><a href="link-mock.html"><i class="footer__icon icon-instagram"></i></a></div>
+      </div>
+    </div>
+  <script type="text/javascript" src="/assets/js/app.js"></script></body>
+</html>
